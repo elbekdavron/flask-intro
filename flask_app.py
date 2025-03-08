@@ -24,8 +24,9 @@ def to_usd():
                 "convertedCurrency": "USD"
             }
     """
+    num = int(request.args.get('amount', 0))
+    return str(round(num / usd, 2))
 
-    return 
 @app.route('/api/to-uzs', methods=['GET'])
 def to_uzs():
     """
@@ -46,6 +47,8 @@ def to_uzs():
                 "convertedCurrency": "UZS"
             }
     """
-    return 
+    num = int(request.args.get('amount', 0))
+    return str(round(num * usd, 2))
+    
 if __name__ == '__main__':
     app.run(debug = True)    
